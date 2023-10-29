@@ -1,0 +1,14 @@
+<input type="text" name="todo" #task /> <br /><br />
+<button (click)="createTask(task.value)">Add</button>
+
+<ul *ngFor="let list of taskList">
+  <li #list>
+    Id : {{ list.id }} Task : {{ list.name }}
+    <button (click)="removeTask(list.id)">Remove</button>
+  </li>
+</ul>
+
+<li><a routerLink="userDetails">User Details</a></li>
+<li><a routerLink="compDetails">Company Details</a></li>
+
+<router-outlet />

@@ -1,0 +1,30 @@
+<!-- <form #basicForm="ngForm" (ngSubmit)="registerData(basicForm.value)">
+    <input type="text" ngModel name="name" placeholder="Enter the name">
+    <br><br>
+    <input type="email" ngModel name="email" placeholder="Enter the email">
+    <br><br>
+    <input type="text" ngModel name="Password" placeholder="Enter the Password">
+    <br><br>
+
+    <button>Register</button>
+</form>
+<button (click)="registerData(basicForm.value)">Outstide button</button>
+
+
+<li>{{data.name}}</li>
+<li>{{data.email}}</li>
+<li>{{data.Password}}</li> -->
+
+
+<h2>Reactive forn</h2>
+<form [formGroup]="reactiveForm" (ngSubmit)="login()">
+    Username : <input type="text" formControlName="user">
+    <br>
+    <span style="color: red;" *ngIf="userField && userField.invalid && userField.touched">Please enter the valid input</span>
+    <br><br>
+    Password : <input type="text" formControlName="Password">
+    <br>
+    <span style="color: red;" *ngIf="passwordField && passwordField.invalid && passwordField.touched">Please enter the valid input</span>
+    <br><br>
+    <button [disabled]="reactiveForm.invalid">Login</button>
+</form>
